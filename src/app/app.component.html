@@ -1,5 +1,9 @@
 <div class="wrapper">
-  <form action="/" class="form">
+  <form
+    (ngSubmit)="onSubmit()"
+    action="/"
+    class="form"
+  >
     <div class="field">
       <p class="control has-icons-left">
         <input
@@ -19,30 +23,30 @@
 
     <section class="indicator">
       <span
-        class="indicator__part"
+        class="indicator__bar"
         [class]="{
-        'indicator__part--weak': currentPasswordStrength === 'weak',
-        'indicator__part--medium': currentPasswordStrength === 'medium',
-        'indicator__part--strong': currentPasswordStrength === 'strong'
+        'indicator__bar--weak': currentPasswordStrength === 'weak',
+        'indicator__bar--medium': currentPasswordStrength === 'medium',
+        'indicator__bar--strong': currentPasswordStrength === 'strong'
         }"
       >
         &nbsp;
       </span>
 
       <span
-        class="indicator__part"
+        class="indicator__bar"
         [class]="{
-        'indicator__part--medium': currentPasswordStrength === 'medium',
-        'indicator__part--strong': currentPasswordStrength === 'strong'
+        'indicator__bar--medium': currentPasswordStrength === 'medium',
+        'indicator__bar--strong': currentPasswordStrength === 'strong'
         }"
       >
         &nbsp;
       </span>
 
       <span
-        class="indicator__part"
+        class="indicator__bar"
         [class]="{
-        'indicator__part--strong': currentPasswordStrength === 'strong'
+        'indicator__bar--strong': currentPasswordStrength === 'strong'
         }"
       >
         &nbsp;

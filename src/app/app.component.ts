@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faEnvelope, faLock, faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faLock } from '@fortawesome/free-solid-svg-icons';
 
 export enum PasswordStrength {
   NONE = 'none',
@@ -42,5 +42,10 @@ export class AppComponent {
       default:
         return;
     }
+  }
+
+  onSubmit() {
+    this.passwordValue = '';
+    this.currentPasswordStrength = PasswordStrength.NONE;
   }
 }
