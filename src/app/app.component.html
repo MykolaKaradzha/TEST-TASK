@@ -1,29 +1,62 @@
 <div class="wrapper">
   <form action="/" class="form">
     <div class="field">
-      <p class="control has-icons-left has-icons-right">
-        <input class="input" type="email" placeholder="Email">
-        <span class="icon is-small is-left">
-      <fa-icon [icon]="faEnvelope"></fa-icon>
-    </span>
-        <span class="icon is-small is-right">
-      <fa-icon [icon]="faCheck"></fa-icon>
-    </span>
-      </p>
-    </div>
-    <div class="field">
       <p class="control has-icons-left">
-        <input class="input" type="password" placeholder="Password">
+        <input
+          [(ngModel)]="passwordValue"
+          (ngModelChange)="checkPasswordStrength($event)"
+          name="password"
+          class="input"
+          placeholder="Password"
+          type="password"
+        >
+
         <span class="icon is-small is-left">
       <fa-icon [icon]="faLock"></fa-icon>
     </span>
       </p>
     </div>
-    <section class="form__indicator indicator">
-      <span class="indicator__part">&nbsp;</span>
-      <span class="indicator__part">&nbsp;</span>
-      <span class="indicator__part">&nbsp;</span>
+
+    <section class="indicator">
+      <span
+        class="indicator__part"
+        [class]="{
+        'indicator__part--weak': currentPasswordStrength === 'weak',
+        'indicator__part--medium': currentPasswordStrength === 'medium',
+        'indicator__part--strong': currentPasswordStrength === 'strong'
+        }"
+      >
+        &nbsp;
+      </span>
+
+      <span
+        class="indicator__part"
+        [class]="{
+        'indicator__part--medium': currentPasswordStrength === 'medium',
+        'indicator__part--strong': currentPasswordStrength === 'strong'
+        }"
+      >
+        &nbsp;
+      </span>
+
+      <span
+        class="indicator__part"
+        [class]="{
+        'indicator__part--strong': currentPasswordStrength === 'strong'
+        }"
+      >
+        &nbsp;
+      </span>
     </section>
+
+    <input
+      type="submit"
+      value="Submit"
+      class="button
+      is-link"
+      [class]="{'is-outlined': currentPasswordStrength !== 'strong'}"
+      [disabled]="currentPasswordStrength !== 'strong'"
+    >
   </form>
 </div>
 

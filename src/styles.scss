@@ -30,27 +30,31 @@ input, button {
   display: flex;
   flex-direction: column;
   gap: 16px;
-
-  .form__label {
-    position: relative;
-  }
-
-  .form__indicator {
-  }
 }
 
 .indicator {
   width: 100%;
   height: 8px;
+  margin: 0 0 24px;
+  display: flex;
+  justify-content: center;
   &__part {
-    display: inline-block;
-    width: 30%;
-    height: 8px;
+    width: 31%;
+    height: 12px;
     margin-left: 8px;
     background-color: grey;
-    border-radius: 2rem;
     &:first-child {
       margin-left: 0;
+    }
+
+    &--weak {
+      background-color: hsl(348, 100%, 61%);
+    }
+    &--medium {
+      background-color: hsl(48, 100%, 67%);
+    }
+    &--strong {
+      background-color: hsl(141, 53%, 53%);
     }
   }
 }
