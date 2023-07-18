@@ -8,7 +8,7 @@
       <p class="control has-icons-left">
         <input
           [(ngModel)]="passwordValue"
-          (ngModelChange)="checkPasswordStrength($event)"
+          (ngModelChange)="checkPasswordStrength()"
           name="password"
           class="input"
           placeholder="Password"
@@ -53,11 +53,31 @@
       </span>
     </section>
 
+    <div
+      class="notification is-success is-light"
+      *ngIf="isNotificationOpen && currentPasswordStrength !== 'strong'"
+    >
+
+      <button
+        (click)="closeNotification()"
+        class="delete"
+      >
+      </button>
+
+      <b>Strong password must have:</b>
+      <hr class="notification__divider"/>
+      <ul class="notification__list">
+        <li>at least 8 characters</li>
+        <li>letters</li>
+        <li>a symbol(!@#$%^&*)</li>
+        <li>digits</li>
+      </ul>
+    </div>
+
     <input
       type="submit"
       value="Submit"
-      class="button
-      is-link"
+      class="button is-link"
       [class]="{'is-outlined': currentPasswordStrength !== 'strong'}"
       [disabled]="currentPasswordStrength !== 'strong'"
     >

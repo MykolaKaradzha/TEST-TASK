@@ -18,3 +18,4 @@ The essence of the assignment:
 
 
 Implemented using Angular Template driven form. For styling SCSS, Bulma library and Fontawesome library are used.
+Taking into account user experience, I added notification panel, with instructions for user.
