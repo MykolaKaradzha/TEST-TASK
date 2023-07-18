@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { faEnvelope, faLock, faCheck } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'usense-tech-task';
+  faEnvelope = faEnvelope;
+  faLock = faLock;
+  faCheck = faCheck
 }

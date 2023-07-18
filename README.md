@@ -1,2 +1,2 @@
-USENSE Test task
+USENSE TEST TASK
 

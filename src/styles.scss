@@ -1,1 +1,58 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
+* {
+  margin: 0;
+}
+
+body, html, {
+  height:100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+input, button {
+  font: inherit;
+}
+
+.wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .form__label {
+    position: relative;
+  }
+
+  .form__indicator {
+  }
+}
+
+.indicator {
+  width: 100%;
+  height: 8px;
+  &__part {
+    display: inline-block;
+    width: 30%;
+    height: 8px;
+    margin-left: 8px;
+    background-color: grey;
+    border-radius: 2rem;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+@import "../node_modules/bulma/bulma.sass";
